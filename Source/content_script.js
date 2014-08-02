@@ -33,8 +33,10 @@ function handleText(textNode)
 
 	v = v.replace(/\bDisrupt\b/g, "Fluster");
 	v = v.replace(/\bdisrupt\b/g, "fluster");
-	v = v.replace(/\bDisruption\b/g, "FLustering");
+	v = v.replace(/\bDisruption\b/g, "Flustering");
 	v = v.replace(/\bdisruption\b/g, "flustering");
+	v = v.replace(/\bDisruptive\b/g, "Flustering");
+	v = v.replace(/\bdisruptive\b/g, "flustering");
 	
 	textNode.nodeValue = v;
 }
