@@ -34,7 +34,6 @@ function oneOf(array) {
 	var item = array[Math.floor(Math.random()*array.length)];
 }
 
-}
 function handleText(textNode) 
 {
 	var v = textNode.nodeValue;
