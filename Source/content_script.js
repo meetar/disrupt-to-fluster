@@ -1,4 +1,5 @@
 var verbs = ["gently tidy up", "fluff the pillow of", "cuddle", "fluster", "mildly agitate", "massage"];
+var nouns = ["gentle tidying", "pillow-fluffing", "cuddle", "flustering", "mild agitation", "massage"];
 var adjectives = ["gently tidied", "fluffed", "cuddled", "flustered", "mildly agitated", "massaged"];
 var gerunds = ["gently tidying up", "fluffing the pillow of", "cuddling", "flustering", "mildly agitating", "massaging"];
 
@@ -42,8 +43,8 @@ function handleText(textNode)
 
 	v = v.replace(/\bDisrupt\b/g, oneOf(verbs));
 	v = v.replace(/\bdisrupt\b/g, oneOf(verbs));
-	v = v.replace(/\bDisruption\b/g, oneOf(gerunds));
-	v = v.replace(/\bdisruption\b/g, oneOf(gerunds));
+	v = v.replace(/\bDisruption\b/g, oneOf(nouns));
+	v = v.replace(/\bdisruption\b/g, oneOf(nouns));
 	v = v.replace(/\bDisruptive\b/g, oneOf(adjectives));
 	v = v.replace(/\bdisruptive\b/g, oneOf(adjectives));
 	v = v.replace(/\bDisrupting\b/g, oneOf(gerunds));
