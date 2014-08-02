@@ -1,3 +1,7 @@
+var verbs = ["gently tidy up", "fluff the pillow of", "cuddle", "fluster", "mildly agitate", "massage"];
+var adjectives = ["gently tidied", "fluffed", "cuddled", "flustered", "mildly agitated", "massaged"];
+var gerunds = ["gently tidying up", "fluffing the pillow of", "cuddling", "flustering", "mildly agitating", "massaging"];
+
 walk(document.body);
 
 function walk(node) 
@@ -27,28 +31,25 @@ function walk(node)
 	}
 }
 
-var verbs = ["gently tidy up", "fluff the pillow of", "cuddle", "fluster", "mildly agitate", "massage"];
-var gerunds = ["gently tidying up", "fluffing the pillow of", "cuddling", "flustering", "mildly agitating", "massaging"];
-
-function oneOf(array) {
-	var item = array[Math.floor(Math.random()*array.length)];
+function oneOf(a) {
+	return item = a[Math.floor(Math.random()*a.length)];
 }
 
 function handleText(textNode) 
 {
 	var v = textNode.nodeValue;
-	var capped = /[A-Z]/.test( v[0]) );
+	var capped = /[A-Z]/.test( v[0] );
 
 	v = v.replace(/\bDisrupt\b/g, oneOf(verbs));
 	v = v.replace(/\bdisrupt\b/g, oneOf(verbs));
 	v = v.replace(/\bDisruption\b/g, oneOf(gerunds));
 	v = v.replace(/\bdisruption\b/g, oneOf(gerunds));
-	v = v.replace(/\bDisruptive\b/g, oneOf(gerunds));
-	v = v.replace(/\bdisruptive\b/g, oneOf(gerunds));
+	v = v.replace(/\bDisruptive\b/g, oneOf(adjectives));
+	v = v.replace(/\bdisruptive\b/g, oneOf(adjectives));
 	v = v.replace(/\bDisrupting\b/g, oneOf(gerunds));
 	v = v.replace(/\bdisrupting\b/g, oneOf(gerunds));
 	
-	if capped { v = v.charAt(0).toUpperCase() + v.slice(1); }
+	if (capped) { v = v.charAt(0).toUpperCase() + v.slice(1); }
 	textNode.nodeValue = v;
 }
 
